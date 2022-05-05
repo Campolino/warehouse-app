@@ -13,7 +13,7 @@ class WarehousesController < ApplicationController
         w = Warehouse.new(warehouse_params) # Strong parameters
         w.save
 
-        flash[:notice] = 'Galpão cadastrado com sucesso'
-        redirect_to root_path
+        # flash[:notice] = 'Galpão cadastrado com sucesso' ou
+        redirect_to root_path, notice: 'Galpão cadastrado com sucesso'
     end
 end
