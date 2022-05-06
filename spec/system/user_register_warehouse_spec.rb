@@ -30,7 +30,7 @@ describe 'Usuário cadastra um galpão' do
         fill_in 'Endereço', with: 'Avenida do Museu do Amanhã, 1000'
         fill_in 'Cidade', with: 'Rio de Janeiro'
         fill_in 'CEP', with: '20100-000'
-        fill_in 'Área', with: 32000
+        fill_in 'Área', with: '32000'
         click_on 'Enviar'
 
         # Assert
