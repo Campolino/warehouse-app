@@ -62,4 +62,23 @@ describe 'Usuário cadastra um galpão' do
         expect(page).to have_content 'CEP não pode ficar em branco'
         expect(page).to have_content 'Área não pode ficar em branco'
     end
+
+    it 'com um cep inválido' do
+        # Arrange
+
+        # Act
+        visit root_path
+        click_on 'Cadastrar Galpão'
+        fill_in 'Nome', with: 'Galpão Planalto'
+        fill_in 'Descrição', with: 'Galpão localizado no planalto norte catarinense'
+        fill_in 'Código', with: 'SBS'
+        fill_in 'Endereço', with: 'Avenida Argolo, 1580'
+        fill_in 'Cidade', with: 'São Bento do Sul'
+        fill_in 'CEP', with: '89290-00'
+        fill_in 'Área', with: '10000'
+        click_on 'Enviar'
+        
+        # Assert
+        expect(page).to have_content 'CEP não é válido'
+    end
 end
