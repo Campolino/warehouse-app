@@ -8,4 +8,5 @@
     <p><strong>Endereço:</strong> <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
 </div>
 
+<div><%= link_to 'Editar', edit_warehouse_path(@warehouse.id) %></div>
 <div><%= link_to 'Voltar', root_path %></div>
