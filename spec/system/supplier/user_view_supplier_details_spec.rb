@@ -18,4 +18,18 @@ describe 'Usuário vê detalhes do fornecedor' do
         expect(page).to have_content 'Endereço: Av. das Pedras, 125 - Guarupaba - SC'
         expect(page).to have_content 'Email: acme@acme.com'
     end
+
+    it 'e volta para a tela inicial' do
+        # Arrange
+        Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '4344726000120', full_address: 'Av. das Pedras, 125', city: 'Guarupaba', state: 'SC',email: 'acme@acme.com')
+
+        # Act
+        visit root_path
+        click_on 'Fornecedores'
+        click_on 'ACME'
+        click_on 'Voltar'
+
+        # Assert
+        expect(current_path).to eq root_path
+    end
 end
