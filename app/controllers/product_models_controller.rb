@@ -6,7 +6,6 @@ class ProductModelsController < ApplicationController
     end
 
     def show
-
     end
 
     def new
@@ -17,8 +16,13 @@ class ProductModelsController < ApplicationController
     def create
         @product_model = ProductModel.new(product_model_params)
 
-        @product_model.save
-        redirect_to @product_model, notice: 'Modelo de produto cadastrado com sucesso.'
+        if @product_model.save
+            redirect_to @product_model, notice: 'Modelo de produto cadastrado com sucesso.'
+        else
+            flash.now[:notice] = 'Modelo de Produto não cadastrado.'
+            @suppliers = Supplier.all
+            render 'new'
+        end
     end
 
     private
