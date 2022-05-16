@@ -1,0 +1,8 @@
+button {
+    border: 0;
+    background-color: #fff;
+    color: -webkit-link;
+    text-decoration: underline;
+    font-size: 1.8vh;
+    cursor: pointer;
+}
