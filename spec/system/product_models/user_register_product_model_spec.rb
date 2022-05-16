@@ -3,9 +3,13 @@ require 'rails_helper'
 describe 'Usuário cadastra um modelo de produto' do
     it 'com sucesso' do
         # Arrange
+        user = User.create!(name: 'Joaquim', email:'joca@email.com', password: 'supersenha')
+
         supplier = Supplier.create!(corporate_name: 'Samsung LTDA', brand_name: 'Samsung', registration_number: '55101188000155', full_address: 'Av. das Pedras, 125', city: 'Guarupaba', state: 'SC',email: 'sac@samsung.com')
 
         # Act
+        login_as(user, :scope => :user) 
+
         visit root_path
 
         click_on 'Modelos de Produtos'
@@ -32,9 +36,13 @@ describe 'Usuário cadastra um modelo de produto' do
 
     it 'com dados incompletos' do
         # Arrange
+        user = User.create!(name: 'Joaquim', email:'joca@email.com', password: 'supersenha')
+
         supplier = Supplier.create!(corporate_name: 'Samsung LTDA', brand_name: 'Samsung', registration_number: '55101188000155', full_address: 'Av. das Pedras, 125', city: 'Guarupaba', state: 'SC',email: 'sac@samsung.com')
 
         # Act
+        login_as(user, :scope => :user) 
+
         visit root_path
 
         click_on 'Modelos de Produtos'
