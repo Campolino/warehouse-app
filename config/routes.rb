@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :suppliers, only: [:index, :show, :new, :create, :edit, :update]
 
   resources :product_models, only: [:index, :show, :new, :create]
+
+  resources :orders, only: [:indx, :new, :create, :show]
 end
