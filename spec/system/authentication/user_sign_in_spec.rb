@@ -10,7 +10,7 @@ describe 'Usuário se autentica' do
 
         click_on 'Login'
 
-        within('form') do
+        within('main form') do
             fill_in 'E-mail', with: 'lucas@email.com' 
             fill_in 'Senha', with: 'password'
 
@@ -35,7 +35,7 @@ describe 'Usuário se autentica' do
 
         click_on 'Login'
 
-        within('form') do
+        within('main form') do
             fill_in 'E-mail', with: 'lucas@email.com'
             fill_in 'Senha', with: 'password'
 
