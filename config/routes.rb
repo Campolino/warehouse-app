@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create, :show, :edit, :update] do
     get 'search', on: :collection
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :warehouses, only: [:show]
+    end
+  end
 end
