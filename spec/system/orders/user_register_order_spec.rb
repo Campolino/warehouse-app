@@ -34,6 +34,7 @@ describe 'Usuário cadastrar um pedido' do
         # Assert
         expect(page).to have_content 'Pedido cadastrado com sucesso.'
         expect(page).to have_content 'Pedido AC23AD98'
+        expect(page).to have_content 'Situação do Pedido: Pendente'
         expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
         expect(page).to have_content 'Fornecedor: ACME LTDA - 55101188000155'
         expect(page).to have_content 'Usuário Responsável: Sergio | sergio@email.com'
